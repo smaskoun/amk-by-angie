@@ -11,13 +11,14 @@
 <meta property="og:image" content="img/logo.jpg">
 <link rel="icon" href="img/favicon.png">
 <!--
-  DRAFT, not published. Things to fill in before going live:
-  1. Messenger is the main order button. The optional form button uses the placeholder
-     https://forms.gle/TmVV2tozZycPizsA8: replace it or hide that button before going live.
+  Notes:
+  1. Messenger is the main order button. The form button goes to the Google Form
+     "AMK By Angie: order request" (https://forms.gle/TmVV2tozZycPizsA8, checked Oct 27 2026).
   2. Prices from Saad (Oct 22): balloon $65, +flowers $80, +teddy $80, teddy+flowers $100,
      frames 25x25 from $45, mug $15, T-shirt from $20. Grad sash $35 from older messages.
   3. Notice: balloons, frames, T-shirts 3 days; mugs 24 hours. Delivery $15 in Windsor, outside discussed.
-  4. Test the Order on Messenger button (m.me link) on a phone once live.
+  4. FAQ wording is copied word for word from the live Messenger FAQ (v3, approved by Saad Oct 26 2026).
+     Change it only with Saad's and Anjie's OK, and keep it the same as the Messenger FAQ.
   5. Arabic line is from the voice guide; Angie should read it first.
 -->
 <style>
@@ -144,6 +145,20 @@
     display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(61,26,51,.1)}
   .arrows svg{width:16px;height:16px}
 
+  /* ---------- FAQ ---------- */
+  .faq{display:grid;gap:8px}
+  .faq details{background:#fff;border-radius:14px;border:1.5px solid rgba(184,140,70,.35)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px 16px;min-height:48px;font-weight:500;font-size:14.5px;color:var(--deep);-webkit-tap-highlight-color:transparent}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"";flex:0 0 9px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);
+    transform:translateY(-3px) rotate(45deg);transition:transform .2s ease}
+  .faq details[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+  .faq details[open] summary{color:var(--plum)}
+  .faq summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:12px}
+  .faq .a{padding:0 16px 14px;font-size:14px;color:var(--char)}
+  .faq .a a{color:var(--plum);font-weight:500;word-break:break-all}
+
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     .sky{display:none}
@@ -183,8 +198,7 @@
         <li>A photo idea, if you have one</li>
       </ul>
     </li>
-    <!-- PLACEHOLDER: replace https://forms.gle/TmVV2tozZycPizsA8 with the real Google Form link,
-         or delete/hide this <li> before going live. -->
+    <!-- Order form: Google Form "AMK By Angie: order request". -->
     <li class="rise-in" style="--i:7"><a class="btn alt" href="https://forms.gle/TmVV2tozZycPizsA8" target="_blank" rel="noopener">Prefer a form? Fill one in</a></li>
   </ul>
 
@@ -240,6 +254,22 @@
       <div class="row" style="--i:8" data-r><span>Delivery in Windsor<em>Outside Windsor, message us and we'll work out a price</em></span><b>$15</b></div>
     </div>
     <p class="note reveal">Please order 3 days ahead for balloons, frames and T-shirts, and 24 hours ahead for mugs. Every piece is made to order, so just ask if you want something different.</p>
+  </section>
+
+  <section id="faq">
+    <h2 class="reveal">Questions</h2>
+    <p class="sub reveal">Quick answers before you order.</p>
+    <!-- Same wording as the live Messenger FAQ (social-studio/anjie/messaging/approved.md, v3). -->
+    <div class="faq reveal">
+      <details><summary>How much do your gifts cost?</summary><p class="a">Balloon bouquets start at $65, with $80 and $100 options. Frames start at $45, mugs are $15 and T-shirts start at $20. Before you book, I'll send you a quote with every charge and the full total.</p></details>
+      <details><summary>How do I order?</summary><p class="a">Fill out the order form here:<br><a href="https://forms.gle/TmVV2tozZycPizsA8" target="_blank" rel="noopener">https://forms.gle/TmVV2tozZycPizsA8</a><br>I'll check the date and send you the order details. Your order is confirmed once you OK them.</p></details>
+      <details><summary>Do you deliver?</summary><p class="a">Pickup is free in Windsor, near N8W 5V4, by appointment. I'll send the exact address with your order details. Delivery in Windsor is $15. Outside Windsor, I'll give you the price before you book.</p></details>
+      <details><summary>How much notice do you need?</summary><p class="a">3 days for balloons, frames and T-shirts. Mugs need 24 hours. Need it sooner? Rush orders may cost more, so message me and I'll give you the price first.</p></details>
+      <details><summary>Can I get something personalised?</summary><p class="a">Yes! Balloons, frames, mugs and T-shirts can all have your names or message. I'll check the spelling, colours and price with you before you book. I always ask before sharing a photo of your order online.</p></details>
+      <details><summary>How do I pay?</summary><p class="a">E-transfer to <a href="mailto:amkcrafting.inc@gmail.com">amkcrafting.inc@gmail.com</a> or cash at pickup. Some orders need a deposit. If yours does, I'll tell you the amount and the cancellation terms before you book.</p></details>
+      <details><summary>What sizes are the gifts?</summary><p class="a">The bubble balloon bouquet is about 90 cm tall and the teddy bear is about 30 cm. Frames are 25 x 25 cm.</p></details>
+      <details><summary>Are balloons safe for kids?</summary><p class="a">Never breathe in helium, and keep balloons tied down and away from power lines. Tell me about any latex allergy before you order.</p></details>
+    </div>
   </section>
 
   <section id="gallery">
